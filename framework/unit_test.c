@@ -6,7 +6,7 @@
 /*   By: vcombey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:39:05 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/11 14:00:13 by vcombey          ###   ########.fr       */
+/*   Updated: 2017/02/11 17:06:45 by vcombey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,31 @@ void			load_test(t_unit_test	**testlist, char *name, int (*f) (void))
 int				exec_test(int (*f) (void))
 {
 	pid_t	father;
-	int		res;
+	int		*res;
 
-	res = -1;
+	res = (int *)malloc(sizeof(int));
+	*res = -42;
 	father = fork();
 	if (father == 0)
-		res = f();
+	{
+		*res = f();
+		exit (*res);
+	}
 	if (father > 0)
 	{
-		wait (0);
-		return (res);
+		wait (res);
+		ft_putnbr(*res);
 	}
-	return (-5);
+	return (*res);
 }
 
 int				launch_tests(t_unit_test **testlist)
 {
 	int				count;
 	t_unit_test		*tmp;
+	int				res;
 
+	(void)res;
 	count = 0;
 	tmp = *testlist;
 	while (tmp)
@@ -64,13 +70,14 @@ int				launch_tests(t_unit_test **testlist)
 		ft_putstr("    > ");
 		ft_putstr(tmp->name);
 		ft_putstr(" : ");
-		if (exec_test(tmp->f) == 0)
+		res = exec_test(tmp->f);
+		if (res == 0)
 		{
-			ft_putstr("\033[32m[OK]\n\033[0m");
+			ft_putendl("\033[32m[OK]\033[0m");
 			count++;
 		}
-		else if (exec_test(tmp->f) == -1)
-			ft_putstr("\033[31m[KO]\n\033[0m");
+		else if (res == -1)
+			ft_putendl("\033[31m[KO]\033[0m");
 		tmp = tmp->next;
 	}
 	return (count);
