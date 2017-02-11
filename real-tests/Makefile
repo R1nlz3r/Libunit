@@ -6,7 +6,7 @@
 #    By: vcombey <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/30 19:59:01 by vcombey           #+#    #+#              #
-#    Updated: 2017/02/11 14:05:57 by vcombey          ###   ########.fr        #
+#    Updated: 2017/02/11 14:25:27 by vcombey          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC =	main.c					\
 		strlen/01_basic_test.c	\
 		strlen/02_medium_test.c	\
 		strlen/03_hard_test.c	\
+		strlen/04_null_test.c	\
 
 INCLUDE = libft/
 
