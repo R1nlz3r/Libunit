@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vcombey <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/30 19:59:01 by vcombey           #+#    #+#              #
-#    Updated: 2017/02/11 14:25:27 by vcombey          ###   ########.fr        #
+#    Updated: 2017/02/11 17:56:50 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,19 @@ SRC =	main.c					\
 		strlen/02_medium_test.c	\
 		strlen/03_hard_test.c	\
 		strlen/04_null_test.c	\
+		atoi/00_launcher.c		\
+		atoi/01_void_test.c		\
+		atoi/02_basic_test_1.c	\
+		atoi/03_basic_test_2.c	\
+		atoi/04_basic_test_3.c	\
+		atoi/05_basic_test_4.c	\
+		atoi/06_space_test_1.c	\
+		atoi/07_space_test_2.c	\
+		atoi/08_error_test_1.c	\
+		atoi/09_error_test_2.c	\
+		atoi/10_tab_test.c		\
+		atoi/11_intmin_test.c	\
+		atoi/12_intmax_test.c	\
 
 INCLUDE = libft/
 
@@ -41,6 +54,7 @@ re: fclean all
 objs/%.o : %.c
 	@/bin/mkdir -p objs
 	/bin/mkdir -p objs/strlen
+	/bin/mkdir -p objs/atoi
 	gcc -g $(CFLAGS) -I $(INCLUDE) -c -o $@ $<
 
 .PHONY: all clean fclean re

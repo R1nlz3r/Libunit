@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   unit_test.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcombey <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:39:05 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/11 17:06:45 by vcombey          ###   ########.fr       */
+/*   Updated: 2017/02/11 17:38:46 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,20 @@ void			load_test(t_unit_test	**testlist, char *name, int (*f) (void))
 	*testlist = new;
 }
 
+void			lol_segfault(int sig)
+{
+	(void)sig;
+	ft_putendl("\033[31m[SEGF]\033[0m");
+	exit(1);
+}
+
+void 			lol_buseror(int sig)
+{
+	(void)sig;
+	ft_putendl("\033[31m[BUSE]\033[0m");
+	exit(1);
+}
+
 int				exec_test(int (*f) (void))
 {
 	pid_t	father;
@@ -50,6 +64,8 @@ int				exec_test(int (*f) (void))
 	}
 	if (father > 0)
 	{
+		signal(SIGSEGV, lol_segfault);
+		signal(SIGBUS, lol_buseror);
 		wait (res);
 		ft_putnbr(*res);
 	}
