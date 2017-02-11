@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_null_test.c                                     :+:      :+:    :+:   */
+/*   09_error_test_2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 12:26:12 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/11 12:45:10 by mapandel         ###   ########.fr       */
+/*   Created: 2017/02/11 13:18:27 by mapandel          #+#    #+#             */
+/*   Updated: 2017/02/11 13:21:21 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		null_test(void)
+int		error_test_2(void)
 {
-	char	*test;
-
-	test = NULL;
-	if (strlen(test) == ft_strlen(test))
+	if (atoi("   -efegi") == ft_atoi("   -efegi"))
 		return (0);
 	else
 		return (-1);

@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_null_test.c                                     :+:      :+:    :+:   */
+/*   10_tab_test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 12:26:12 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/11 12:45:10 by mapandel         ###   ########.fr       */
+/*   Created: 2017/02/11 13:20:18 by mapandel          #+#    #+#             */
+/*   Updated: 2017/02/11 13:23:15 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		null_test(void)
+int		tab_test(void)
 {
-	char	*test;
-
-	test = NULL;
-	if (strlen(test) == ft_strlen(test))
+	if (atoi("\n\t\r   \v\f-556") == ft_atoi("\n\t\r   \v\f-556"))
 		return (0);
 	else
 		return (-1);

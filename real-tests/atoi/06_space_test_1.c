@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_null_test.c                                     :+:      :+:    :+:   */
+/*   06_space_test_1.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 12:26:12 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/11 12:45:10 by mapandel         ###   ########.fr       */
+/*   Created: 2017/02/11 13:16:53 by mapandel          #+#    #+#             */
+/*   Updated: 2017/02/11 13:21:39 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		null_test(void)
+int		space_test_1(void)
 {
-	char	*test;
-
-	test = NULL;
-	if (strlen(test) == ft_strlen(test))
+	if (atoi("  5463") == ft_atoi("  5463"))
 		return (0);
 	else
 		return (-1);
