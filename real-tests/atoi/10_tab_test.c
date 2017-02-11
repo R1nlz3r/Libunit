@@ -6,9 +6,11 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:20:18 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/11 13:23:15 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/11 14:11:42 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../basic_tests.h"
 
 int		tab_test(void)
 {
