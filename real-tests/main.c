@@ -1,25 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcombey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 12:33:56 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/11 13:27:13 by vcombey          ###   ########.fr       */
+/*   Created: 2017/02/11 13:03:44 by vcombey           #+#    #+#             */
+/*   Updated: 2017/02/11 13:04:13 by vcombey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../basic_tests.h"
-
-int strlen_launcher(void)
+int		main()
 {
-	t_unit_test *testlist;
-
-	testlist = NULL;
-	ft_putstr("STRLEN:");
-	load_test(&testlist, "Basic test", &basic_test);
-	load_test(&testlist, "NULL test", &medium_test);
-	//load_test(&testlist, "Bigger string test", &bigger_str_test); /* This test won't be loaded */
-	return(launch_tests(&testlist));
+	lauch_strlen();
+	return (0);
 }
