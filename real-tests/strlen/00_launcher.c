@@ -6,7 +6,7 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:33:56 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/11 13:33:37 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/11 14:24:43 by vcombey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ int strlen_launcher(void)
 	t_unit_test *testlist;
 
 	testlist = NULL;
-	ft_putstr("STRLEN:");
-	load_test(&testlist, "Basic test", &basic_test);
-	load_test(&testlist, "NULL test", &medium_test);
-	//load_test(&testlist, "Bigger string test", &bigger_str_test); /* This test won't be loaded */
+	ft_putendl("STRLEN:");
+	load_test(&testlist, "test4", &null_test);
+	load_test(&testlist, "test3", &hard_test);
+	load_test(&testlist, "test2", &medium_test);
+	load_test(&testlist, "test1", &basic_test);
 	return(launch_tests(&testlist));
 }
