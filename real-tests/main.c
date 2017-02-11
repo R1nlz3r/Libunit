@@ -6,12 +6,14 @@
 /*   By: vcombey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:03:44 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/11 13:04:13 by vcombey          ###   ########.fr       */
+/*   Updated: 2017/02/11 14:02:57 by vcombey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "basic_tests.h"
+
 int		main()
 {
-	lauch_strlen();
+	strlen_launcher();
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vcombey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:39:05 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/11 13:27:16 by vcombey          ###   ########.fr       */
+/*   Updated: 2017/02/11 14:00:13 by vcombey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int				exec_test(int (*f) (void))
 	pid_t	father;
 	int		res;
 
+	res = -1;
 	father = fork();
 	if (father == 0)
 		res = f();
@@ -56,6 +57,7 @@ int				launch_tests(t_unit_test **testlist)
 	int				count;
 	t_unit_test		*tmp;
 
+	count = 0;
 	tmp = *testlist;
 	while (tmp)
 	{

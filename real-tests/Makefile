@@ -6,7 +6,7 @@
 #    By: vcombey <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/30 19:59:01 by vcombey           #+#    #+#              #
-#    Updated: 2017/02/11 13:17:39 by vcombey          ###   ########.fr        #
+#    Updated: 2017/02/11 14:05:57 by vcombey          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ re: fclean all
 
 objs/%.o : %.c
 	@/bin/mkdir -p objs
+	/bin/mkdir -p objs/strlen
 	gcc -g $(CFLAGS) -I $(INCLUDE) -c -o $@ $<
 
 .PHONY: all clean fclean re
