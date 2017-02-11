@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/11/04 03:03:10 by mapandel          #+#    #+#              #
-#    Updated: 2017/02/11 14:01:07 by vcombey          ###   ########.fr        #
+#    Created: 2017/02/11 16:02:15 by mapandel          #+#    #+#              #
+#    Updated: 2017/02/11 17:16:51 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,10 @@ CFLAGS = 	-Wall -Wextra -Werror
 SRC =		unit_test.c \
 
 OBJ =		$(SRC:.c=.o)
+
+#			Library Path
+
+LIBPATH =	../libft/libft.a
 
 #			Colors
 
@@ -41,15 +45,17 @@ WHI =		\033[37m
 #			Main Rules
 
 $(NAME):
-	@make affcompil
-	@echo "$(GRE)--::Library Indextion::--$(DEF)"
-	@ar rc $(NAME) $(OBJ)
+	@cd ../libft; $(MAKE) -f Makefile
+	@make $(OBJ)
+	@echo "$(GRE)--::Libunit.a Indextion::--$(DEF)"
+	@ar rc $(NAME) $(OBJ) $(LIBPATH)
 	@ranlib $(NAME)
+
 
 all: $(NAME)
 
 standard:
-	@echo "$(YEL)--::Check Standard::--$(DEF)"
+	@cd ../libft; $(MAKE) -f Makefile standard
 	@norminette -R CheckForbiddenSourceHeader $(SRC)
 
 re: fclean all
@@ -61,16 +67,13 @@ glu: fclean all clean
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $^
 
-affcompil:
-	@echo "$(BLU)--::Library Compilation::--$(DEF)"
-	@make $(OBJ)
-
 #			Clean Rules
 
 clean:
-	@echo "$(PUR)--::Library Binary Delection::--$(DEF)"
+	@cd ../libft; $(MAKE) -f Makefile clean
+	@echo "$(PUR)--::Binary Delection::--$(DEF)"
 	@rm -rf $(OBJ)
 
 fclean: clean
 	@echo "$(RED)--::Library Delection::--$(DEF)"
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) $(LIBPATH)
