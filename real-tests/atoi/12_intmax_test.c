@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_null_test.c                                     :+:      :+:    :+:   */
+/*   12_intmax_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 12:26:12 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/11 12:45:10 by mapandel         ###   ########.fr       */
+/*   Created: 2017/02/11 13:25:40 by mapandel          #+#    #+#             */
+/*   Updated: 2017/02/11 13:26:17 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		null_test(void)
+int		intmin_test(void)
 {
-	char	*test;
-
-	test = NULL;
-	if (strlen(test) == ft_strlen(test))
+	if (atoi("2147483647") == ft_atoi("2147483647"))
 		return (0);
 	else
 		return (-1);
