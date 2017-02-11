@@ -6,7 +6,7 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:39:05 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/11 17:38:46 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/11 18:02:59 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void			load_test(t_unit_test	**testlist, char *name, int (*f) (void))
 void			lol_segfault(int sig)
 {
 	(void)sig;
-	ft_putendl("\033[31m[SEGF]\033[0m");
+	ft_putendl("\033[31m[SEGV]\033[0m");
 	exit(1);
 }
 
