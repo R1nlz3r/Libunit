@@ -6,7 +6,7 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:20:55 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/11 17:52:20 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/11 18:12:06 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <stdlib.h>
 #include "../libft/libft.h"
 #include "../framework/libunit.h"
+
+int		ft_unit_lst_len(t_unit_test *lst);
 
 int		strlen_launcher(void);
 int		basic_test(void);
