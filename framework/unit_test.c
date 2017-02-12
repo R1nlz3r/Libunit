@@ -6,7 +6,7 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:39:05 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/12 15:21:47 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 17:14:07 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ int				print_result(pid_t father)
 			ft_putendl("\033[31m[SIGV]\033[0m");
 		if (WTERMSIG(father) == SIGBUS)
 			ft_putendl("\033[31m[BUSE]\033[0m");
+		if (WTERMSIG(father) == SIGABRT)
+			ft_putendl("\033[31m[SIGA]\033[0m");
+		if (WTERMSIG(father) == SIGFPE)
+			ft_putendl("\033[31m[FPTE]\033[0m");
 	}
 	return (0);
 }

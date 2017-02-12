@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   04_bus_error_test.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/12 11:46:52 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 17:10:11 by mapandel         ###   ########.fr       */
+/*   Created: 2017/02/12 12:20:06 by mapandel          #+#    #+#             */
+/*   Updated: 2017/02/12 16:57:31 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "tests.h"
 
-# include "../framework/libunit.h"
+int		bus_error_test(void)
+{
+	char	*str;
 
-int		ft_unit_lst_len(t_unit_test *lst);
-
-int		tests_launcher(void);
-int		ok_test(void);
-int		ko_test(void);
-int		segfault_test(void);
-int		bus_error_test(void);
-int		abort_test(void);
-int		floating_point_exception_test(void);
-
-#endif
+	str = "bus_error";
+	if ((str[0] = '4'))
+		return (0);
+	else
+		return (-1);
+}

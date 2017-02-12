@@ -6,7 +6,7 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:03:44 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/12 15:28:57 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 16:53:24 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int		main(void)
 	count += strlen_launcher();
 	count += atoi_launcher();
 	ft_putnbr(count);
-	ft_putendl("/2 suite tests passed");
+	ft_putendl("/2 suite tests passed\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/30 19:59:01 by vcombey           #+#    #+#              #
-#    Updated: 2017/02/12 13:10:11 by mapandel         ###   ########.fr        #
+#    Updated: 2017/02/12 17:12:01 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,32 +19,35 @@ CFLAGS = 	-Wall -Wextra -Werror
 
 #			Sources
 
-REAL-TESTS =	real-tests/main.c					\
-				real-tests/strlen/00_launcher.c		\
-				real-tests/strlen/01_basic_test.c	\
-				real-tests/strlen/02_medium_test.c	\
-				real-tests/strlen/03_hard_test.c	\
-				real-tests/atoi/00_launcher.c		\
-				real-tests/atoi/01_void_test.c		\
-				real-tests/atoi/02_basic_test_1.c	\
-				real-tests/atoi/03_basic_test_2.c	\
-				real-tests/atoi/04_basic_test_3.c	\
-				real-tests/atoi/05_basic_test_4.c	\
-				real-tests/atoi/06_space_test_1.c	\
-				real-tests/atoi/07_space_test_2.c	\
-				real-tests/atoi/08_error_test_1.c	\
-				real-tests/atoi/09_error_test_2.c	\
-				real-tests/atoi/10_tab_test.c		\
-				real-tests/atoi/11_intmin_test.c	\
-				real-tests/atoi/12_intmax_test.c	\
+REAL-TESTS =	real-tests/main.c							\
+				real-tests/strlen/00_launcher.c				\
+				real-tests/strlen/01_basic_test.c			\
+				real-tests/strlen/02_medium_test.c			\
+				real-tests/strlen/03_hard_test.c			\
+				real-tests/atoi/00_launcher.c				\
+				real-tests/atoi/01_void_test.c				\
+				real-tests/atoi/02_basic_test_1.c			\
+				real-tests/atoi/03_basic_test_2.c			\
+				real-tests/atoi/04_basic_test_3.c			\
+				real-tests/atoi/05_basic_test_4.c			\
+				real-tests/atoi/06_space_test_1.c			\
+				real-tests/atoi/07_space_test_2.c			\
+				real-tests/atoi/08_error_test_1.c			\
+				real-tests/atoi/09_error_test_2.c			\
+				real-tests/atoi/10_tab_test.c				\
+				real-tests/atoi/11_intmin_test.c			\
+				real-tests/atoi/12_intmax_test.c			\
 
 OBJ-RT =		$(REAL-TESTS:.c=.o)
 
-TESTS =			tests/main.c						\
-				tests/00_launcher.c					\
-				tests/01_ok_test.c					\
-				tests/02_ko_test.c					\
-				tests/03_segfault_test.c			\
+TESTS =			tests/main.c								\
+				tests/00_launcher.c							\
+				tests/01_ok_test.c							\
+				tests/02_ko_test.c							\
+				tests/03_segfault_test.c					\
+				tests/04_bus_error_test.c					\
+				tests/05_abort_test.c						\
+				tests/06_floating_point_exception_test.c	\
 
 OBJ-T =			$(TESTS:.c=.o)
 
@@ -79,7 +82,7 @@ $(NAME):
 
 all: $(NAME)
 
-test:
+test: fclean
 	@cd framework; $(MAKE) -f Makefile
 	@make affcompil-t
 	$(CC) $(CFLAGS) $(OBJ-T) $(LIBPATH) $(FRAMEWORKPATH) -o $(NAME)
