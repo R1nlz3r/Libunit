@@ -6,7 +6,7 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:39:05 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/12 17:14:07 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 19:22:26 by vcombey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int				print_result(pid_t father)
 	}
 	if WIFSIGNALED(father)
 	{
+		if (WTERMSIG(father) == SIGALRM)
+			ft_putendl("\033[31m[TIME]\033[0m");
 		if (WTERMSIG(father) == SIGSEGV)
 			ft_putendl("\033[31m[SIGV]\033[0m");
 		if (WTERMSIG(father) == SIGBUS)
@@ -65,6 +67,7 @@ int				exec_test(int (*f) (void))
 	father = fork();
 	if (father == 0)
 	{
+		alarm(10);
 		if (f() == 0)
 			exit (0);
 		exit (1);

@@ -6,7 +6,7 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 12:03:17 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 17:10:36 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 19:02:19 by vcombey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		tests_launcher(void)
 
 	testlist = NULL;
 	ft_putendl("TESTS:");
+	load_test(&testlist, "time_out_test", &timeout_test);
 	load_test(&testlist, "floating_point_exception_test",
 		&floating_point_exception_test);
 	load_test(&testlist, "abort_test", &abort_test);

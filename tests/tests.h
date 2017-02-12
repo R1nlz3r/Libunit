@@ -6,7 +6,7 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 11:46:52 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 17:10:11 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 19:02:40 by vcombey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int		segfault_test(void);
 int		bus_error_test(void);
 int		abort_test(void);
 int		floating_point_exception_test(void);
+int		timeout_test(void);
 
 #endif

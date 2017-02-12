@@ -6,7 +6,7 @@
 #    By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/30 19:59:01 by vcombey           #+#    #+#              #
-#    Updated: 2017/02/12 17:59:11 by mapandel         ###   ########.fr        #
+#    Updated: 2017/02/12 19:03:06 by vcombey          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ TESTS =		main.c								\
 			04_bus_error_test.c					\
 			05_abort_test.c						\
 			06_floating_point_exception_test.c	\
+			07_timeout.c						\
 
 OBJ-T =			$(TESTS:.c=.o)
 
