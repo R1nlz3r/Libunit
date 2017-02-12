@@ -6,7 +6,7 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 11:45:18 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/11 17:41:30 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 07:45:11 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		basic_test(void)
 	size_t	strlen_res;
 
 	test[20] = '\0';
-	ft_strfill(test, 'a', 20);
+	ft_strfill(test, 'a', 19);
 	strlen_res = strlen(test);
 	my_res = ft_strlen(test);
 	if (my_res == strlen_res)

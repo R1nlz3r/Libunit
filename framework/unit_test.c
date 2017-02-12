@@ -6,14 +6,11 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:39:05 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/11 18:17:09 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 07:42:50 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libunit.h"
-#include "../libft/libft.h"
-#include <unistd.h>
 
 t_unit_test		*unit_test_new(char	*name, int (*f) (void))
 {
@@ -35,20 +32,6 @@ void			load_test(t_unit_test	**testlist, char *name, int (*f) (void))
 	*testlist = new;
 }
 
-void			lol_segfault(int sig)
-{
-	(void)sig;
-	ft_putendl("\033[31m[SEGV]\033[0m");
-	exit(1);
-}
-
-void 			lol_buseror(int sig)
-{
-	(void)sig;
-	ft_putendl("\033[31m[BUSE]\033[0m");
-	exit(1);
-}
-
 int				exec_test(int (*f) (void))
 {
 	pid_t	father;
@@ -64,8 +47,8 @@ int				exec_test(int (*f) (void))
 	}
 	if (father > 0)
 	{
-		signal(SIGSEGV, lol_segfault);
-		signal(SIGBUS, lol_buseror);
+		signal(SIGSEGV, ft_segfault);
+		signal(SIGBUS, ft_buseror);
 		wait (res);
 	}
 	return (*res);
@@ -91,7 +74,7 @@ int				launch_tests(t_unit_test **testlist)
 			ft_putendl("\033[32m[OK]\033[0m");
 			count++;
 		}
-		else if (res == -1)
+		else if (res == 65280)
 			ft_putendl("\033[31m[KO]\033[0m");
 		tmp = tmp->next;
 	}

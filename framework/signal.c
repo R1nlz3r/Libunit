@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_null_test.c                                     :+:      :+:    :+:   */
+/*   signal.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/11 12:26:12 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/11 16:27:02 by vcombey          ###   ########.fr       */
+/*   Created: 2017/02/12 07:31:51 by mapandel          #+#    #+#             */
+/*   Updated: 2017/02/12 07:42:56 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../basic_tests.h"
+#include "libunit.h"
 
-int		null_test(void)
+void			ft_segfault(int sig)
 {
-	char	*test;
+	(void)sig;
+	ft_putendl("\033[31m[SEGV]\033[0m");
+	exit(1);
+}
 
-	test = NULL;
-	if (strlen(test) == ft_strlen(test))
-		return (0);
-	else
-		return (-1);
+void 			ft_buseror(int sig)
+{
+	(void)sig;
+	ft_putendl("\033[31m[BUSE]\033[0m");
+	exit(1);
 }

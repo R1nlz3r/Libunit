@@ -6,7 +6,7 @@
 #    By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 16:02:15 by mapandel          #+#    #+#              #
-#    Updated: 2017/02/11 17:16:51 by mapandel         ###   ########.fr        #
+#    Updated: 2017/02/12 07:33:41 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ CFLAGS = 	-Wall -Wextra -Werror
 #			Sources
 
 SRC =		unit_test.c \
+			signal.c	\
 
 OBJ =		$(SRC:.c=.o)
 

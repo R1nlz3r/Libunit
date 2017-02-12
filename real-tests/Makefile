@@ -6,18 +6,17 @@
 #    By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/30 19:59:01 by vcombey           #+#    #+#              #
-#    Updated: 2017/02/11 17:56:50 by mapandel         ###   ########.fr        #
+#    Updated: 2017/02/12 07:48:43 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	unitest
+NAME =	unittest
 
 SRC =	main.c					\
 		strlen/00_launcher.c	\
 		strlen/01_basic_test.c	\
 		strlen/02_medium_test.c	\
 		strlen/03_hard_test.c	\
-		strlen/04_null_test.c	\
 		atoi/00_launcher.c		\
 		atoi/01_void_test.c		\
 		atoi/02_basic_test_1.c	\
@@ -41,20 +40,21 @@ CFLAGS += -Wall -g -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	gcc -g $(OBJS) -L ../framework/ -lunit -L ../libft -lft -o $(NAME)
+	@gcc -g $(OBJS) -L ../framework/ -lunit -L ../libft -lft -o $(NAME)
+	@./unittest
 
 clean:
-	/bin/rm -rf objs
+	@/bin/rm -rf objs
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 
 objs/%.o : %.c
 	@/bin/mkdir -p objs
-	/bin/mkdir -p objs/strlen
-	/bin/mkdir -p objs/atoi
-	gcc -g $(CFLAGS) -I $(INCLUDE) -c -o $@ $<
+	@/bin/mkdir -p objs/strlen
+	@/bin/mkdir -p objs/atoi
+	@gcc -g $(CFLAGS) -I $(INCLUDE) -c -o $@ $<
 
 .PHONY: all clean fclean re

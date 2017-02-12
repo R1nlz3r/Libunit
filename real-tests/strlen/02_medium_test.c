@@ -6,16 +6,18 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:03:51 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/11 16:26:35 by vcombey          ###   ########.fr       */
+/*   Updated: 2017/02/12 07:46:12 by mapandel         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "../basic_tests.h"
 
 int		medium_test(void)
 {
-	char	test[50000];
+	char	test[50001];
 
-	ft_strfill(test, 'a', 50000);
+	test[50000] = '\0';
+	ft_strfill(test, 'a', 49999);
 	if (strlen(test) == ft_strlen(test))
 		return (0);
 	else
