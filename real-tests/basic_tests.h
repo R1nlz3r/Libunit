@@ -6,12 +6,12 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:20:55 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/12 07:48:07 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:27:15 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASIC_TEST_H
-# define BASIC_TEST_H
+#ifndef BASIC_TESTS_H
+# define BASIC_TESTS_H
 
 # include "../framework/libunit.h"
 

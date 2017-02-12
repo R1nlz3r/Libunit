@@ -6,7 +6,7 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 12:03:17 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 13:06:22 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:30:28 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int		tests_launcher(void)
 	lst_len = ft_unit_lst_len(testlist);
 	ft_putnbr(lst_len);
 	ft_putstr(" tests checked\n\n");
-	return(lst_len == valid_test);
+	return (lst_len == valid_test);
 }

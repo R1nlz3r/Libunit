@@ -6,7 +6,7 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 12:15:52 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 12:18:37 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:29:44 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ko_test(void)
 {
 	if ((0))
-		return(0);
+		return (0);
 	else
-		return(-1);
+		return (-1);
 }

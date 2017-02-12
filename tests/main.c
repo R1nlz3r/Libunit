@@ -6,7 +6,7 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 12:04:05 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 13:24:31 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:05:02 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,5 @@ int		main(void)
 	ft_putendl("**    42  - Unit Tests (tests)    **");
 	ft_putendl("************************************");
 	count = (count && tests_launcher());
-	if (!count)
-		return (1);
 	return (0);
-	//return ((count == 0) ? 1 : 0);
 }

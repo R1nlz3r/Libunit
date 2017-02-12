@@ -6,7 +6,7 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:39:05 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/12 07:42:50 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:21:47 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,35 +32,49 @@ void			load_test(t_unit_test	**testlist, char *name, int (*f) (void))
 	*testlist = new;
 }
 
+int				print_result(pid_t father)
+{
+	if (WIFEXITED(father))
+	{
+		if (father == 0)
+		{
+			ft_putendl("\033[32m[OK]\033[0m");
+			return (1);
+		}
+		else if (father == 256)
+			ft_putendl("\033[31m[KO]\033[0m");
+	}
+	if WIFSIGNALED(father)
+	{
+		if (WTERMSIG(father) == SIGSEGV)
+			ft_putendl("\033[31m[SIGV]\033[0m");
+		if (WTERMSIG(father) == SIGBUS)
+			ft_putendl("\033[31m[BUSE]\033[0m");
+	}
+	return (0);
+}
+
 int				exec_test(int (*f) (void))
 {
 	pid_t	father;
-	int		*res;
 
-	res = (int *)malloc(sizeof(int));
-	*res = -42;
 	father = fork();
 	if (father == 0)
 	{
-		*res = f();
-		exit (*res);
+		if (f() == 0)
+			exit (0);
+		exit (1);
 	}
 	if (father > 0)
-	{
-		signal(SIGSEGV, ft_segfault);
-		signal(SIGBUS, ft_buseror);
-		wait (res);
-	}
-	return (*res);
+		wait (&father);
+	return (print_result(father));
 }
 
 int				launch_tests(t_unit_test **testlist)
 {
 	int				count;
 	t_unit_test		*tmp;
-	int				res;
 
-	(void)res;
 	count = 0;
 	tmp = *testlist;
 	while (tmp)
@@ -68,15 +82,8 @@ int				launch_tests(t_unit_test **testlist)
 		ft_putstr("    > ");
 		ft_putstr(tmp->name);
 		ft_putstr(" : ");
-		res = exec_test(tmp->f);
-		if (res == 0)
-		{
-			ft_putendl("\033[32m[OK]\033[0m");
-			count++;
-		}
-		else if (res == 65280)
-			ft_putendl("\033[31m[KO]\033[0m");
-		tmp = tmp->next;
+		count += exec_test(tmp->f);
+	tmp = tmp->next;
 	}
 	return (count);
 }

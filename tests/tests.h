@@ -6,12 +6,12 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 11:46:52 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 12:20:32 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:30:41 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_H
-# define TEST_H
+#ifndef TESTS_H
+# define TESTS_H
 
 # include "../framework/libunit.h"
 

@@ -6,13 +6,13 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:33:56 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/12 13:28:36 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:30:09 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../basic_tests.h"
 
-int strlen_launcher(void)
+int		strlen_launcher(void)
 {
 	t_unit_test	*testlist;
 	int			valid_test;

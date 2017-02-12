@@ -6,13 +6,13 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:47:12 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 12:56:39 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:27:01 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../basic_tests.h"
 
-int atoi_launcher(void)
+int		atoi_launcher(void)
 {
 	t_unit_test	*testlist;
 	int			valid_test;
@@ -38,5 +38,5 @@ int atoi_launcher(void)
 	lst_len = ft_unit_lst_len(testlist);
 	ft_putnbr(lst_len);
 	ft_putstr(" tests checked\n\n");
-	return(lst_len == valid_test);
+	return (lst_len == valid_test);
 }

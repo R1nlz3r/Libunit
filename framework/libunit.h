@@ -6,7 +6,7 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:34:53 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/12 07:41:48 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:25:32 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ typedef struct			s_unit_test
 	struct s_unit_test	*next;
 }						t_unit_test;
 
-void	load_test(t_unit_test	**testlist, char *name, int (*f) (void));
-int		launch_tests(t_unit_test **testlist);
-void	ft_segfault(int sig);
-void	ft_buseror(int sig);
-void	ft_illegal(int sig);
+void					load_test(t_unit_test	**testlist, char *name,
+		int (*f) (void));
+int						launch_tests(t_unit_test **testlist);
 
 #endif
