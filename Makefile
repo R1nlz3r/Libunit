@@ -6,7 +6,7 @@
 #    By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/30 19:59:01 by vcombey           #+#    #+#              #
-#    Updated: 2017/02/12 11:07:15 by mapandel         ###   ########.fr        #
+#    Updated: 2017/02/12 13:10:11 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,26 +19,35 @@ CFLAGS = 	-Wall -Wextra -Werror
 
 #			Sources
 
-SRC =	tests/main.c					\
-		tests/strlen/00_launcher.c		\
-		tests/strlen/01_basic_test.c	\
-		tests/strlen/02_medium_test.c	\
-		tests/strlen/03_hard_test.c		\
-		tests/atoi/00_launcher.c		\
-		tests/atoi/01_void_test.c		\
-		tests/atoi/02_basic_test_1.c	\
-		tests/atoi/03_basic_test_2.c	\
-		tests/atoi/04_basic_test_3.c	\
-		tests/atoi/05_basic_test_4.c	\
-		tests/atoi/06_space_test_1.c	\
-		tests/atoi/07_space_test_2.c	\
-		tests/atoi/08_error_test_1.c	\
-		tests/atoi/09_error_test_2.c	\
-		tests/atoi/10_tab_test.c		\
-		tests/atoi/11_intmin_test.c		\
-		tests/atoi/12_intmax_test.c		\
+REAL-TESTS =	real-tests/main.c					\
+				real-tests/strlen/00_launcher.c		\
+				real-tests/strlen/01_basic_test.c	\
+				real-tests/strlen/02_medium_test.c	\
+				real-tests/strlen/03_hard_test.c	\
+				real-tests/atoi/00_launcher.c		\
+				real-tests/atoi/01_void_test.c		\
+				real-tests/atoi/02_basic_test_1.c	\
+				real-tests/atoi/03_basic_test_2.c	\
+				real-tests/atoi/04_basic_test_3.c	\
+				real-tests/atoi/05_basic_test_4.c	\
+				real-tests/atoi/06_space_test_1.c	\
+				real-tests/atoi/07_space_test_2.c	\
+				real-tests/atoi/08_error_test_1.c	\
+				real-tests/atoi/09_error_test_2.c	\
+				real-tests/atoi/10_tab_test.c		\
+				real-tests/atoi/11_intmin_test.c	\
+				real-tests/atoi/12_intmax_test.c	\
 
-OBJ =		$(SRC:.c=.o)
+OBJ-RT =		$(REAL-TESTS:.c=.o)
+
+TESTS =			tests/main.c						\
+				tests/00_launcher.c					\
+				tests/01_ok_test.c					\
+				tests/02_ko_test.c					\
+				tests/03_segfault_test.c			\
+
+OBJ-T =			$(TESTS:.c=.o)
+
 
 #			Library Path
 
@@ -64,12 +73,17 @@ WHI =		\033[37m
 
 $(NAME):
 	@cd framework; $(MAKE) -f Makefile
-	@make affcompil
-	$(CC) $(CFLAGS) $(OBJ) $(LIBPATH) $(FRAMEWORKPATH) -o $(NAME)
+	@make affcompil-rt
+	$(CC) $(CFLAGS) $(OBJ-RT) $(LIBPATH) $(FRAMEWORKPATH) -o $(NAME)
 	@./$(NAME)
 
-
 all: $(NAME)
+
+test:
+	@cd framework; $(MAKE) -f Makefile
+	@make affcompil-t
+	$(CC) $(CFLAGS) $(OBJ-T) $(LIBPATH) $(FRAMEWORKPATH) -o $(NAME)
+	@./$(NAME)
 
 re: fclean all
 
@@ -77,11 +91,19 @@ glu: fclean all clean
 
 #			Compilation Rules
 
-affcompil:
+affcompil-rt:
 	@echo "$(BLU)--::Unittest Compilation::--$(DEF)"
-	@make $(OBJ)
+	@make $(OBJ-RT)
 
-%.o: %.c
+affcompil-t:
+	@echo "$(BLU)--::Unittest-tests Compilation::--$(DEF)"
+	@make $(OBJ-T)
+
+
+%.o: %$(REAL-TESTS).c
+	$(CC) $(CFLAGS) -c -o $@ $^
+
+%.o: %$(TESTS).c
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 #			Clean Rules
@@ -89,7 +111,7 @@ affcompil:
 clean:
 	@cd framework; $(MAKE) -f Makefile clean
 	@echo "$(PUR)--::Unittest Binary Delection::--$(DEF)"
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJ-RT) $(OBJ-T)
 
 fclean: clean
 	@echo "$(RED)--::Libft.a Delection::--$(DEF)"

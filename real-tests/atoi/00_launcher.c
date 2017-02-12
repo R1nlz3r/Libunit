@@ -6,7 +6,7 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:47:12 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/11 18:18:02 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 12:56:39 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int atoi_launcher(void)
 {
 	t_unit_test	*testlist;
 	int			valid_test;
+	int			lst_len;
 
 	testlist = NULL;
 	ft_putendl("ATOI:");
@@ -34,7 +35,8 @@ int atoi_launcher(void)
 	valid_test = launch_tests(&testlist);
 	ft_putnbr(valid_test);
 	ft_putchar('/');
-	ft_putnbr(ft_unit_lst_len(testlist));
+	lst_len = ft_unit_lst_len(testlist);
+	ft_putnbr(lst_len);
 	ft_putstr(" tests checked\n\n");
-	return(valid_test);
+	return(lst_len == valid_test);
 }

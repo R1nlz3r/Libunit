@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/12 12:04:05 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 13:24:31 by mapandel         ###   ########.fr       */
+/*   Created: 2017/02/11 13:03:44 by vcombey           #+#    #+#             */
+/*   Updated: 2017/02/12 13:31:04 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "basic_tests.h"
 
 int		ft_unit_lst_len(t_unit_test *lst)
 {
 	return ((lst == NULL) ? 0 : 1 + ft_unit_lst_len(lst->next));
 }
+
 
 int		main(void)
 {
@@ -24,11 +25,9 @@ int		main(void)
 	count = 1;
 	ft_putstr("---\n\n");
 	ft_putendl("************************************");
-	ft_putendl("**    42  - Unit Tests (tests)    **");
+	ft_putendl("**        42  - Unit Tests        **");
 	ft_putendl("************************************");
-	count = (count && tests_launcher());
-	if (!count)
-		return (1);
-	return (0);
-	//return ((count == 0) ? 1 : 0);
+	count = (strlen_launcher() && count);
+	count = (atoi_launcher() && count);
+	return ((count == 0) ? -1 : 0);
 }
