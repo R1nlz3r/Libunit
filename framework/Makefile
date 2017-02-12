@@ -6,7 +6,7 @@
 #    By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 16:02:15 by mapandel          #+#    #+#              #
-#    Updated: 2017/02/12 07:33:41 by mapandel         ###   ########.fr        #
+#    Updated: 2017/02/12 11:05:57 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,9 +72,10 @@ glu: fclean all clean
 
 clean:
 	@cd ../libft; $(MAKE) -f Makefile clean
-	@echo "$(PUR)--::Binary Delection::--$(DEF)"
+	@echo "$(PUR)--::Framework Binary Delection::--$(DEF)"
 	@rm -rf $(OBJ)
 
 fclean: clean
-	@echo "$(RED)--::Library Delection::--$(DEF)"
+	@echo "$(RED)--::Libft.a Delection::--$(DEF)"
+	@echo "$(RED)--::Libunit.a Delection::--$(DEF)"
 	@rm -rf $(NAME) $(LIBPATH)

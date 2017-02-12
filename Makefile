@@ -6,7 +6,7 @@
 #    By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/30 19:59:01 by vcombey           #+#    #+#              #
-#    Updated: 2017/02/12 10:46:49 by mapandel         ###   ########.fr        #
+#    Updated: 2017/02/12 11:07:15 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,24 +19,24 @@ CFLAGS = 	-Wall -Wextra -Werror
 
 #			Sources
 
-SRC =	real-tests/main.c					\
-		real-tests/strlen/00_launcher.c		\
-		real-tests/strlen/01_basic_test.c	\
-		real-tests/strlen/02_medium_test.c	\
-		real-tests/strlen/03_hard_test.c	\
-		real-tests/atoi/00_launcher.c		\
-		real-tests/atoi/01_void_test.c		\
-		real-tests/atoi/02_basic_test_1.c	\
-		real-tests/atoi/03_basic_test_2.c	\
-		real-tests/atoi/04_basic_test_3.c	\
-		real-tests/atoi/05_basic_test_4.c	\
-		real-tests/atoi/06_space_test_1.c	\
-		real-tests/atoi/07_space_test_2.c	\
-		real-tests/atoi/08_error_test_1.c	\
-		real-tests/atoi/09_error_test_2.c	\
-		real-tests/atoi/10_tab_test.c		\
-		real-tests/atoi/11_intmin_test.c	\
-		real-tests/atoi/12_intmax_test.c	\
+SRC =	tests/main.c					\
+		tests/strlen/00_launcher.c		\
+		tests/strlen/01_basic_test.c	\
+		tests/strlen/02_medium_test.c	\
+		tests/strlen/03_hard_test.c		\
+		tests/atoi/00_launcher.c		\
+		tests/atoi/01_void_test.c		\
+		tests/atoi/02_basic_test_1.c	\
+		tests/atoi/03_basic_test_2.c	\
+		tests/atoi/04_basic_test_3.c	\
+		tests/atoi/05_basic_test_4.c	\
+		tests/atoi/06_space_test_1.c	\
+		tests/atoi/07_space_test_2.c	\
+		tests/atoi/08_error_test_1.c	\
+		tests/atoi/09_error_test_2.c	\
+		tests/atoi/10_tab_test.c		\
+		tests/atoi/11_intmin_test.c		\
+		tests/atoi/12_intmax_test.c		\
 
 OBJ =		$(SRC:.c=.o)
 
@@ -78,7 +78,7 @@ glu: fclean all clean
 #			Compilation Rules
 
 affcompil:
-	@echo "$(BLU)--::Libunit Compilation::--$(DEF)"
+	@echo "$(BLU)--::Unittest Compilation::--$(DEF)"
 	@make $(OBJ)
 
 %.o: %.c
@@ -87,9 +87,12 @@ affcompil:
 #			Clean Rules
 
 clean:
-	@echo "$(PUR)--::Binary Delection::--$(DEF)"
+	@cd framework; $(MAKE) -f Makefile clean
+	@echo "$(PUR)--::Unittest Binary Delection::--$(DEF)"
 	@rm -rf $(OBJ)
 
 fclean: clean
-	@echo "$(RED)--::Libunit Delection::--$(DEF)"
-	@rm -rf $(NAME)
+	@echo "$(RED)--::Libft.a Delection::--$(DEF)"
+	@echo "$(RED)--::Libunit.a Delection::--$(DEF)"
+	@echo "$(RED)--::Unittest Delection::--$(DEF)"
+	@rm -rf $(NAME) $(FRAMEWORKPATH) $(LIBPATH)
