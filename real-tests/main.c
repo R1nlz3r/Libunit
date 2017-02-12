@@ -6,7 +6,7 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:03:44 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/11 18:18:21 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/11 21:47:36 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ int		main()
 	int count;
 
 	count = 0;
+	ft_putendl("************************************");
+	ft_putendl("**        42  - Unit Tests        **");
+	ft_putendl("************************************");
 	count += strlen_launcher();
 	count += atoi_launcher();
 	return (0);
