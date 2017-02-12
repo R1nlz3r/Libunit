@@ -6,13 +6,13 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:39:05 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/12 19:22:26 by vcombey          ###   ########.fr       */
+/*   Updated: 2017/02/12 19:57:01 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-t_unit_test		*unit_test_new(char	*name, int (*f) (void))
+t_unit_test		*unit_test_new(char *name, int (*f)(void))
 {
 	t_unit_test	*new;
 
@@ -23,7 +23,7 @@ t_unit_test		*unit_test_new(char	*name, int (*f) (void))
 	return (new);
 }
 
-void			load_test(t_unit_test	**testlist, char *name, int (*f) (void))
+void			load_test(t_unit_test **testlist, char *name, int (*f)(void))
 {
 	t_unit_test	*new;
 
@@ -44,7 +44,7 @@ int				print_result(pid_t father)
 		else if (father == 256)
 			ft_putendl("\033[31m[KO]\033[0m");
 	}
-	if WIFSIGNALED(father)
+	if (WIFSIGNALED(father))
 	{
 		if (WTERMSIG(father) == SIGALRM)
 			ft_putendl("\033[31m[TIME]\033[0m");
@@ -69,11 +69,11 @@ int				exec_test(int (*f) (void))
 	{
 		alarm(10);
 		if (f() == 0)
-			exit (0);
-		exit (1);
+			exit(0);
+		exit(1);
 	}
 	if (father > 0)
-		wait (&father);
+		wait(&father);
 	return (print_result(father));
 }
 
@@ -90,7 +90,7 @@ int				launch_tests(t_unit_test **testlist)
 		ft_putstr(tmp->name);
 		ft_putstr(" : ");
 		count += exec_test(tmp->f);
-	tmp = tmp->next;
+		tmp = tmp->next;
 	}
 	return (count);
 }
