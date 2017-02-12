@@ -6,7 +6,7 @@
 #    By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/30 19:59:01 by vcombey           #+#    #+#              #
-#    Updated: 2017/02/12 17:59:56 by mapandel         ###   ########.fr        #
+#    Updated: 2017/02/12 21:13:02 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,9 @@ REAL-TESTS =	main.c							\
 				atoi/10_tab_test.c				\
 				atoi/11_intmin_test.c			\
 				atoi/12_intmax_test.c			\
+				putchar/00_launcher.c			\
+				putchar/01_basic_test.c			\
+				putchar/02_backslash_test.c		\
 
 OBJ-RT =		$(REAL-TESTS:.c=.o)
 

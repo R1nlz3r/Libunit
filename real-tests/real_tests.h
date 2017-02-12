@@ -6,7 +6,7 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:20:55 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/12 17:18:03 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 21:12:12 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,9 @@ int		error_test_2(void);
 int		tab_test(void);
 int		intmin_test(void);
 int		intmax_test(void);
+
+int		putchar_launcher(void);
+int		basic_test_putchar(void);
+int		backslash_test_putchar(void);
 
 #endif
