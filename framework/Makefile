@@ -6,7 +6,7 @@
 #    By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 16:02:15 by mapandel          #+#    #+#              #
-#    Updated: 2017/02/12 15:25:45 by mapandel         ###   ########.fr        #
+#    Updated: 2017/02/12 19:37:40 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ $(NAME):
 	@cd ../libft; $(MAKE) -f Makefile
 	@make $(OBJ)
 	@echo "$(GRE)--::Libunit.a Indextion::--$(DEF)"
-	@ar rc $(NAME) $(OBJ) $(LIBPATH)
+	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
 
