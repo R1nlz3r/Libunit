@@ -6,11 +6,11 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:33:56 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/12 15:30:09 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 17:18:29 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../basic_tests.h"
+#include "../real_tests.h"
 
 int		strlen_launcher(void)
 {

@@ -6,11 +6,11 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:47:12 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 15:27:01 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 17:18:52 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../basic_tests.h"
+#include "../real_tests.h"
 
 int		atoi_launcher(void)
 {

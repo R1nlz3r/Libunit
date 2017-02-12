@@ -6,11 +6,11 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:12:41 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 07:46:59 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 17:18:45 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../basic_tests.h"
+#include "../real_tests.h"
 
 int		hard_test(void)
 {

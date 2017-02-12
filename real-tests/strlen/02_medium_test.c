@@ -6,11 +6,11 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:03:51 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 07:46:12 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 17:18:40 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../basic_tests.h"
+#include "../real_tests.h"
 
 int		medium_test(void)
 {

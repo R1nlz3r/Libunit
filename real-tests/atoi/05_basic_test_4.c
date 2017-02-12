@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   05_basic_test_4.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mapandel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 15:27:51 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/12 15:27:53 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 17:19:19 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../basic_tests.h"
+#include "../real_tests.h"
 
 int		basic_test_4(void)
 {

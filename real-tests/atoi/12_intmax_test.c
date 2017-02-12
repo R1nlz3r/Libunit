@@ -6,11 +6,11 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 13:25:40 by mapandel          #+#    #+#             */
-/*   Updated: 2017/02/11 17:58:56 by mapandel         ###   ########.fr       */
+/*   Updated: 2017/02/12 17:20:01 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../basic_tests.h"
+#include "../real_tests.h"
 
 int		intmax_test(void)
 {
