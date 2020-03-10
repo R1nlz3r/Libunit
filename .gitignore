@@ -1,5 +1,5 @@
-real-tests/trace/
-real-tests/leak_report
+ft_ssl_tests/trace/
+ft_ssl_tests/leak_report
 \#*#
 *~
 .nfs.*

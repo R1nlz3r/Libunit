@@ -6,7 +6,7 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 15:58:20 by mapandel          #+#    #+#             */
-/*   Updated: 2020/03/09 16:27:59 by mapandel         ###   ########.fr       */
+/*   Updated: 2020/03/10 15:10:22 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "libunit.h"
 
-# define FT_SSL_PATH "~/Projects/Ft_ssl/ft_ssl "
-# define FT_SSL_LEAK_REPORT_PATH "~/Projects/Ft_ssl/ft_ssl_leak_report "
+# define FT_SSL_PATH "../../Ft_ssl/ft_ssl "
+# define FT_SSL_LEAK_REPORT_PATH "../../Ft_ssl/ft_ssl_leak_report "
 
 int		ft_unit_lst_len(t_unit_test *lst);
 
