@@ -6,7 +6,7 @@
 #    By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/30 19:59:01 by vcombey           #+#    #+#              #
-#    Updated: 2020/03/09 16:03:56 by mapandel         ###   ########.fr        #
+#    Updated: 2020/03/10 16:54:30 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,9 +114,16 @@ OBJ =			$(SRC:.c=.o)
 
 INC =			includes
 
+#			Project to test
+
+FT_SSL =		Ft_ssl/
+FT_SSL_EXE =	Ft_ssl/ft_ssl \
+				Ft_ssl/ft_ssl_leak_report \
+
 #			Junk Files
 
-TMP =			trace/
+TMP =			trace/ \
+				resources/perm
 
 #			Library Path
 
@@ -151,11 +158,16 @@ $(NAME):		$(FRAMEWORKPATH) $(LIBPATH) $(OBJ)
 	@make compile_message
 	@make compile_executable
 
+$(FT_SSL_EXE):
+	@make -C $(FT_SSL)
+	@make ft_ssl_leak_report -C $(FT_SSL)
+
 all:			$(NAME)
 
-test:			$(NAME)
+test:			$(NAME) $(FT_SSL_EXE)
 	@rm -rf $(TMP)
 	@./$(NAME)
+	@rm -rf $(FT_SSL_EXE)
 
 re:				fclean all
 
@@ -191,7 +203,7 @@ clean:			lclean
 
 fclean:			clean
 	@make fclean_message
-	@rm -rf $(NAME) $(FRAMEWORKPATH) $(LIBPATH)
+	@rm -rf $(NAME) $(FRAMEWORKPATH) $(LIBPATH) $(FT_SSL_EXE)
 
 #			Display
 
