@@ -6,7 +6,7 @@
 #    By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/11 16:02:15 by mapandel          #+#    #+#              #
-#    Updated: 2017/02/12 19:37:40 by mapandel         ###   ########.fr        #
+#    Updated: 2020/02/21 18:34:22 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME =		libunit.a
 #			Compilation
 
 CC = 		clang
-CFLAGS = 	-Wall -Wextra -Werror
+CFLAGS = 	#-Wall -Wextra -Werror -Weverything
 
 #			Sources
 
@@ -25,7 +25,9 @@ OBJ =		$(SRC:.c=.o)
 
 #			Library Path
 
-LIBPATH =	../libft/libft.a
+LIB =		../libft
+LIBPATH =	$(LIB)/libft.a
+LIBINC	=	$(LIB)/includes
 
 #			Colors
 
@@ -44,37 +46,54 @@ WHI =		\033[37m
 
 #			Main Rules
 
-$(NAME):
-	@cd ../libft; $(MAKE) -f Makefile
-	@make $(OBJ)
-	@echo "$(GRE)--::Libunit.a Indextion::--$(DEF)"
+.PHONY:		all indextion re glu
+
+$(NAME):	$(LIBPATH) $(OBJ)
+	@make indextion
+
+all:		$(NAME)
+
+indextion:
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
+	@echo "$(GRE)--::Libunit Indexed::--$(DEF)"
 
+re:			fclean all
 
-all: $(NAME)
-
-standard:
-	@cd ../libft; $(MAKE) -f Makefile standard
-	@norminette -R CheckForbiddenSourceHeader $(SRC)
-
-re: fclean all
-
-glu: fclean all clean
+glu:		fclean all clean
 
 #			Compilation Rules
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $^
+$(LIBPATH):
+	@cd $(LIB); $(MAKE) -f Makefile
+
+%.o:		%.c
+	$(CC) $(CFLAGS) -I $(LIBINC) -c -o $@ $^
 
 #			Clean Rules
 
-clean:
-	@cd ../libft; $(MAKE) -f Makefile clean
-	@echo "$(PUR)--::Framework Binary Delection::--$(DEF)"
+.PHONY:		fclean lfclean clean fclean
+
+lclean:
+	@cd $(LIB); $(MAKE) -f Makefile clean
+
+lfclean:
+	@cd $(LIB); $(MAKE) -f Makefile fclean
+
+clean:		lclean
+	@make clean_message
 	@rm -rf $(OBJ)
 
-fclean: clean
-	@echo "$(RED)--::Libft.a Delection::--$(DEF)"
-	@echo "$(RED)--::Libunit.a Delection::--$(DEF)"
+fclean:		clean
+	@make fclean_message
 	@rm -rf $(NAME) $(LIBPATH)
+
+#			Display
+
+.PHONY:		clean_message fclean_message
+
+clean_message:
+	@echo "$(PUR)--::Unittest Framework Binary Delection::--$(DEF)"
+
+fclean_message:
+	@echo "$(RED)--::Executable and Library Delection::--$(DEF)"

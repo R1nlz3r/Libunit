@@ -6,13 +6,22 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 12:39:05 by vcombey           #+#    #+#             */
-/*   Updated: 2017/02/12 19:57:01 by mapandel         ###   ########.fr       */
+/*   Updated: 2020/02/21 18:35:00 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-t_unit_test		*unit_test_new(char *name, int (*f)(void))
+void			redirect_file_descriptors(void)
+{
+	int		p[2];
+
+	pipe(p);
+	dup2(p[1], 1);
+	dup2(p[1], 2);
+}
+
+static t_unit_test		*unit_test_new(char *name, int (*f)(void))
 {
 	t_unit_test	*new;
 
@@ -32,7 +41,7 @@ void			load_test(t_unit_test **testlist, char *name, int (*f)(void))
 	*testlist = new;
 }
 
-int				print_result(pid_t father)
+static int		print_result(pid_t father)
 {
 	if (WIFEXITED(father))
 	{
@@ -60,14 +69,14 @@ int				print_result(pid_t father)
 	return (0);
 }
 
-int				exec_test(int (*f) (void))
+static int		exec_test(int (*f) (void))
 {
 	pid_t	father;
 
 	father = fork();
 	if (father == 0)
 	{
-		alarm(10);
+		alarm(20);
 		if (f() == 0)
 			exit(0);
 		exit(1);
