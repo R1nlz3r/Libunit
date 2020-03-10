@@ -6,13 +6,13 @@
 /*   By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 18:56:55 by vcombey           #+#    #+#             */
-/*   Updated: 2020/02/09 01:43:45 by mapandel         ###   ########.fr       */
+/*   Updated: 2020/03/10 14:33:56 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-void	timeout_test(void)
+int		timeout_test(void)
 {
 	while (42)
 		;

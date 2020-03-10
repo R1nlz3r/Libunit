@@ -6,13 +6,13 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 16:55:36 by mapandel          #+#    #+#             */
-/*   Updated: 2020/02/09 01:42:34 by mapandel         ###   ########.fr       */
+/*   Updated: 2020/03/10 14:33:47 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-void	abort_test(void)
+int		abort_test(void)
 {
 	abort();
 }
