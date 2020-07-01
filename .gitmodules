@@ -4,6 +4,3 @@
 [submodule "Libft"]
 	path = Libft
 	url = https://github.com/R1nlz3r/Libft.git
-[submodule "ft_ssl_tests/Ft_ssl"]
-	path = ft_ssl_tests/Ft_ssl
-	url = https://github.com/R1nlz3r/Ft_ssl.git
