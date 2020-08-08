@@ -6,7 +6,7 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 15:58:20 by mapandel          #+#    #+#             */
-/*   Updated: 2020/03/10 16:24:13 by mapandel         ###   ########.fr       */
+/*   Updated: 2020/08/08 19:37:56 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,34 @@ int		sha256_no_argument_empty_file(void);
 int		sha256_multiple_files(void);
 int		sha256_multiple_binary_files(void);
 int		sha256_multiple_files_mixup(void);
+
+int		sha512_launcher(void);
+int		sha512_small_file(void);
+int		sha512_medium_file(void);
+int		sha512_large_file(void);
+int		sha512_small_binary_file(void);
+int		sha512_medium_binary_file(void);
+int		sha512_large_binary_file(void);
+int		sha512_dev_null(void);
+int		sha512_empty_file(void);
+int		sha512_piped_small_file(void);
+int		sha512_piped_medium_file(void);
+int		sha512_piped_large_file(void);
+int		sha512_piped_small_binary_file(void);
+int		sha512_piped_medium_binary_file(void);
+int		sha512_piped_large_binary_file(void);
+int		sha512_piped_dev_null(void);
+int		sha512_piped_empty_file(void);
+int		sha512_no_argument_small_file(void);
+int		sha512_no_argument_medium_file(void);
+int		sha512_no_argument_large_file(void);
+int		sha512_no_argument_small_binary_file(void);
+int		sha512_no_argument_medium_binary_file(void);
+int		sha512_no_argument_large_binary_file(void);
+int		sha512_no_argument_dev_null(void);
+int		sha512_no_argument_empty_file(void);
+int		sha512_multiple_files(void);
+int		sha512_multiple_binary_files(void);
+int		sha512_multiple_files_mixup(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 15:58:11 by mapandel          #+#    #+#             */
-/*   Updated: 2020/03/09 17:23:03 by mapandel         ###   ########.fr       */
+/*   Updated: 2020/08/08 19:37:13 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ int		main(void)
 	count += general_tests_launcher();
 	count += md5_launcher();
 	count += sha256_launcher();
+	count += sha512_launcher();
 	ft_putnbr(count);
-	ft_putendl("/3 suite tests passed\n");
-	system("rm -rf resources/perm");
-	return (count == 3? 0 : -1);
+	ft_putendl("/4 suite tests passed\n");
+	system("rm -rf resources/perm resources/pipe");
+	return (count == 4? 0 : -1);
 }

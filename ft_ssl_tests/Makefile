@@ -6,7 +6,7 @@
 #    By: vcombey <vcombey@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/30 19:59:01 by vcombey           #+#    #+#              #
-#    Updated: 2020/03/10 16:54:30 by mapandel         ###   ########.fr        #
+#    Updated: 2020/08/08 19:38:46 by mapandel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,6 +109,34 @@ SRC =			sources/main.c												\
 				sources/sha256/25_multiple_files.c							\
 				sources/sha256/26_multiple_binary_files.c					\
 				sources/sha256/27_multiple_files_mixup.c					\
+				sources/sha512/00_launcher.c								\
+				sources/sha512/01_small_file.c								\
+				sources/sha512/02_medium_file.c								\
+				sources/sha512/03_large_file.c								\
+				sources/sha512/04_small_binary_file.c						\
+				sources/sha512/05_medium_binary_file.c						\
+				sources/sha512/06_large_binary_file.c						\
+				sources/sha512/07_dev_null.c								\
+				sources/sha512/08_empty_file.c								\
+				sources/sha512/09_piped_small_file.c						\
+				sources/sha512/10_piped_medium_file.c						\
+				sources/sha512/11_piped_large_file.c						\
+				sources/sha512/12_piped_small_binary_file.c					\
+				sources/sha512/13_piped_medium_binary_file.c				\
+				sources/sha512/14_piped_large_binary_file.c					\
+				sources/sha512/15_piped_dev_null.c							\
+				sources/sha512/16_piped_empty_file.c						\
+				sources/sha512/17_no_argument_small_file.c					\
+				sources/sha512/18_no_argument_medium_file.c					\
+				sources/sha512/19_no_argument_large_file.c					\
+				sources/sha512/20_no_argument_small_binary_file.c			\
+				sources/sha512/21_no_argument_medium_binary_file.c			\
+				sources/sha512/22_no_argument_large_binary_file.c			\
+				sources/sha512/23_no_argument_dev_null.c					\
+				sources/sha512/24_no_argument_empty_file.c					\
+				sources/sha512/25_multiple_files.c							\
+				sources/sha512/26_multiple_binary_files.c					\
+				sources/sha512/27_multiple_files_mixup.c					\
 
 OBJ =			$(SRC:.c=.o)
 
