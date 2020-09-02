@@ -6,7 +6,7 @@
 /*   By: mapandel <mapandel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 03:36:16 by mapandel          #+#    #+#             */
-/*   Updated: 2020/09/02 18:55:17 by mapandel         ###   ########.fr       */
+/*   Updated: 2020/09/02 19:03:24 by mapandel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ trace/general_tests/02/stderr01");
 Standard commands:\n\n\
 Message Digest commands:\n\
 md5\n\
-sha256\n
+sha256\n\
 sha512\n\n\
 Cipher commands:\" \
 1> trace/general_tests/02/stderr01");
